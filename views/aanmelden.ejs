@@ -1,25 +1,33 @@
 <%- include('./partials/head') %>
-<h1>Plaats een Initiatief</h1>
-    <form id="initiatiefForm" enctype="multipart/form-data">
-        <div>
-            <label for="naam">Naam:</label>
-            <input type="text" id="naam" name="naam" required>
-        </div>
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="organisatie">Organisatie:</label>
-            <input type="text" id="organisatie" name="organisatie">
-        </div>
-        <div>
-            <label for="omschrijving">Omschrijving:</label>
-            <textarea id="omschrijving" name="omschrijving" required></textarea>
-        </div>
-        <div>
-            <label for="bijlage">Bijlage (bestand of afbeelding):</label>
-            <input type="file" id="bijlage" name="bijlage">
-        </div>
+
+<main>
+    <form id="initiatief" action="/success" method="post">
+        <div class="loading-message">Laden... Even geduld a.u.b.</div>
+        <div class="success-message">Success! Het formulier is succesvol verzonden.</div>
+        <div class="error-message">Error! Er is een probleem opgetreden bij het verzenden van het formulier. Probeer het opnieuw.</div>
+        <div class="empty-message">Vul het formulier in.</div>
+
+        <label for="title">Titel:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" required><br>
+
+        <label for="image">Afbeelding:</label>
+        <input type="text" id="image" name="image" required><br>
+
+        <label for="neighbourhood">Buurt:</label>
+        <input type="text" id="neighbourhood" name="neighbourhood" required><br>
+
+        <label for="start_date">Startdatum:</label>
+        <input type="date" id="start_date" name="start_date" required><br>
+
+        <label for="end_date">Einddatum:</label>
+        <input type="date" id="end_date" name="end_date" required><br>
+
+        <label for="short_description">Korte Beschrijving:</label><br>
+        <textarea id="short_description" name="short_description" required></textarea><br>
+
         <button type="submit">Plaats Initiatief</button>
     </form>
+</main>

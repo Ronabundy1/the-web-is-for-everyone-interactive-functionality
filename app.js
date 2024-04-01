@@ -19,7 +19,7 @@ app.set('views', './views')
 app.use(express.static('public'));
 
 // Maak een POST route voor de index
-app.post('/', function (request, response) {
+app.post('/success', function (request, response) {
   // Als er een POST-verzoek wordt ontvangen, redirect het naar een GET-verzoek op /
   response.redirect(303, '/');
 });
@@ -57,10 +57,27 @@ app.get('/contact', function (request, response) {
   response.render('contact')
 });
 
-app.get('/aanmelden', function (request, response) {
-  // Laat de aanmelden pagina zien
-  response.render('aanmelden')
+// Route voor het weergeven van het aanmeldformulier (GET)
+app.get('/aanmelden', function (req, res) {
+  // Render het aanmeldformulier
+  res.render('aanmelden', { success: false, error: false, loading: false, empty: false });
 });
+
+app.get('/success', function (req, res) {
+  // Render het aanmeldformulier
+  res.render('success');
+});
+
+// Modify the POST route for /success to handle the form submission
+app.post('/success', function (request, response) {
+  // Handle form submission here
+  // You can process the form data if needed
+  // Then render the success page
+  response.render('success');
+});
+
+
+
 
 // Dynamische detail route
 app.get('/detail/:itemId', function (request, response) {
