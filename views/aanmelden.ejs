@@ -1,34 +1,35 @@
 <%- include('./partials/head') %>
-
 <main>
+    <!-- Formulier voor het aanmaken van een nieuw initiatief -->
     <form id="initiatief" action="/success" method="post">
-        <!----
-        <div class="loading-message">Laden... Even geduld a.u.b.</div>
-        <div class="success-message">Success! Het formulier is succesvol verzonden.</div>
-        <div class="error-message">Error! Er is een probleem opgetreden bij het verzenden van het formulier. Probeer het opnieuw.</div>
-        <div class="empty-message">Vul het formulier in.</div> -->
-
         <label for="title">Titel:</label>
         <input type="text" id="title" name="title" required><br>
-
+    
         <label for="type">Type:</label>
-        <input type="text" id="type" name="type" required><br>
-
-        <label for="image">Afbeelding:</label>
-        <input type="text" id="image" name="image" required><br>
-
+        <select id="type" name="type" required>
+            <option value="">Selecteer type</option> <!-- Voeg een standaardoptie toe -->
+            <option value="vraag">Vraag</option>
+            <option value="aanbod">Aanbod</option>
+        </select><br>
+    
         <label for="neighbourhood">Buurt:</label>
         <input type="text" id="neighbourhood" name="neighbourhood" required><br>
-
+    
         <label for="start_date">Startdatum:</label>
         <input type="date" id="start_date" name="start_date" required><br>
-
+    
         <label for="end_date">Einddatum:</label>
         <input type="date" id="end_date" name="end_date" required><br>
-
+    
         <label for="short_description">Korte Beschrijving:</label><br>
         <textarea id="short_description" name="short_description" required></textarea><br>
 
+        <!-- Afbeelding input -->
+        <label for="image">Afbeelding:</label>
+        <input type="file" id="image" name="image" accept="image/*" required><br>
+    
         <button type="submit">Plaats Initiatief</button>
     </form>
+    
 </main>
+

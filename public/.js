@@ -25,3 +25,4 @@ function handleFormSubmission(event) {
     }, 2000); // Simuleer een vertraging van 2 seconden voor het verzenden van het formulier
 }
 
+// nog niet af paar stappen missen nog// ik weet niet echt wat het plan hiervan was..

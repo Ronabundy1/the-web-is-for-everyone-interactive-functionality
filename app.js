@@ -18,12 +18,6 @@ app.set('views', './views')
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'));
 
-// Maak een POST route voor de index
-app.post('/success', function (request, response) {
-  // Als er een POST-verzoek wordt ontvangen, redirect het naar een GET-verzoek op /
-  response.redirect(303, '/');
-});
-
 // Route voor de hoofdpagina (GET)
 app.get('/', function (request, response) {
   // Laat de index pagina zien
@@ -62,6 +56,7 @@ app.get('/aanmelden', function (req, res) {
   // Render het aanmeldformulier
   res.render('aanmelden', { success: false, error: false, loading: false, empty: false });
 });
+
 
 app.get('/success', function (req, res) {
   // Render het aanmeldformulier
